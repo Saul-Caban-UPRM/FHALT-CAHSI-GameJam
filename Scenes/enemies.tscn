@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://2f7p21y8mvwf"]
+
+[ext_resource type="Script" uid="uid://c0wn86ivrcjwe" path="res://Scripts/enemy_character.gd" id="1_rbk1d"]
+[ext_resource type="Texture2D" uid="uid://cwk5jtkpg3txy" path="res://Assets/BunnySpriteSheet.png" id="2_rbk1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mhwu"]
+size = Vector2(185, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aovqv"]
+size = Vector2(32, 29)
+
+[sub_resource type="Animation" id="Animation_p0i1u"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Placeholder-132056868547334320632Px:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_rbk1d"]
+resource_name = "IdleLola"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Placeholder-132056868547334320632Px:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 6, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_aovqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Placeholder-132056868547334320632Px:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mhwu"]
+_data = {
+&"Idle": SubResource("Animation_p0i1u"),
+&"IdleLola": SubResource("Animation_rbk1d"),
+&"RESET": SubResource("Animation_aovqv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbk1d"]
+size = Vector2(30, 32)
+
+[sub_resource type="Curve2D" id="Curve2D_b6e6f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -85, -60, 0, 0, 0, 0, -87, 59, 0, 0, 0, 0, 81, 58, 0, 0, 0, 0, 82, -59, 0, 0, 0, 0, -85, -60)
+}
+point_count = 5
+
+[node name="Enemies" type="Node2D"]
+position = Vector2(86, 59)
+
+[node name="EnemyCharacter" type="CharacterBody2D" parent="."]
+position = Vector2(-85, -60)
+script = ExtResource("1_rbk1d")
+
+[node name="Placeholder-132056868547334320632Px" type="Sprite2D" parent="EnemyCharacter"]
+texture_filter = 1
+texture = ExtResource("2_rbk1d")
+hframes = 4
+vframes = 2
+
+[node name="DetectionZone" type="Area2D" parent="EnemyCharacter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCharacter/DetectionZone"]
+shape = SubResource("RectangleShape2D_4mhwu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCharacter"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_aovqv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnemyCharacter"]
+libraries = {
+&"": SubResource("AnimationLibrary_4mhwu")
+}
+
+[node name="HitBox" type="Area2D" parent="EnemyCharacter"]
+
+[node name="HitBox" type="CollisionShape2D" parent="EnemyCharacter/HitBox"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_rbk1d")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_b6e6f")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-85, -60)
+rotation = 1.5876
+
+[connection signal="body_entered" from="EnemyCharacter/DetectionZone" to="EnemyCharacter" method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="EnemyCharacter/DetectionZone" to="EnemyCharacter" method="_on_detection_zone_body_exited"]
+[connection signal="body_entered" from="EnemyCharacter/HitBox" to="EnemyCharacter" method="_on_hit_box_body_entered"]

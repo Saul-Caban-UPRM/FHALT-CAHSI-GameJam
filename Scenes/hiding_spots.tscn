@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtgvpj18kqthm"]
+
+[ext_resource type="Texture2D" uid="uid://ctmswjha31sj2" path="res://Assets/Box.png" id="1_febmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sajra"]
+size = Vector2(24, 24)
+
+[node name="HidingSpots" type="Node2D"]
+
+[node name="Box" type="CharacterBody2D" parent="." groups=["Hiding_spot"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_sajra")
+
+[node name="Box" type="Sprite2D" parent="Box"]
+texture_filter = 1
+texture = ExtResource("1_febmj")
