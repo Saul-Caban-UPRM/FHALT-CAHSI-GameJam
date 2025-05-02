@@ -4,7 +4,7 @@ extends Camera2D
 @onready var ap = $Control/AudioStreamPlayer2D
 @onready var main_cam: Camera2D = $"../Player/CharacterBody2D/Camera2D"
 func start_jumpscare():
-# Switch camera BEFORE pausing
+
 	make_current()
 	
 	# Pause scene AFTER camera is active

@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://2f7p21y8mvwf"]
+[gd_scene load_steps=11 format=3 uid="uid://d066j1ctiy1cr"]
 
-[ext_resource type="Script" uid="uid://c0wn86ivrcjwe" path="res://Scripts/enemy_character.gd" id="1_rbk1d"]
-[ext_resource type="Texture2D" uid="uid://cwk5jtkpg3txy" path="res://Assets/BunnySpriteSheet.png" id="2_rbk1d"]
+[ext_resource type="Script" uid="uid://dbpdwtbex31ir" path="res://Scripts/BugsBunnyEnemy.gd" id="1_l0yrv"]
+[ext_resource type="Texture2D" uid="uid://cwk5jtkpg3txy" path="res://Assets/BunnySpriteSheet.png" id="2_v12ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mhwu"]
 size = Vector2(185, 137)
@@ -66,24 +66,24 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbk1d"]
-size = Vector2(38, 39)
+size = Vector2(30, 32)
 
 [sub_resource type="Curve2D" id="Curve2D_b6e6f"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -86, 9, 0, 0, 0, 0, -67, 21, 0, 0, 0, 0, -57, 21, 0, 0, 0, 0, -33, 21, 0, 0, 0, 0, -19, 20, 0, 0, 0, 0, -4, 9, 0, 0, 0, 0, 2, -1, 0, 0, 0, 0, 1, -19, 0, 0, 0, 0, -2, -43, 0, 0, 0, 0, -8, -53, 0, 0, 0, 0, -21, -57, 0, 0, 0, 0, -34, -58, 0, 0, 0, 0, -51, -58, 0, 0, 0, 0, -66, -56, 0, 0, 0, 0, -79, -51, 0, 0, 0, 0, -84, -42, 0, 0, 0, 0, -87, -38, 0, 0, 0, 0, -86, 9)
+"points": PackedVector2Array(0, 0, 0, 0, -85, -60, 0, 0, 0, 0, -87, 59, 0, 0, 0, 0, 81, 58, 0, 0, 0, 0, 82, -59, 0, 0, 0, 0, -85, -60)
 }
-point_count = 18
+point_count = 5
 
 [node name="Enemies" type="Node2D"]
 position = Vector2(86, 59)
 
 [node name="EnemyCharacter" type="CharacterBody2D" parent="."]
 position = Vector2(-85, -60)
-script = ExtResource("1_rbk1d")
+script = ExtResource("1_l0yrv")
 
 [node name="Placeholder-132056868547334320632Px" type="Sprite2D" parent="EnemyCharacter"]
 texture_filter = 1
-texture = ExtResource("2_rbk1d")
+texture = ExtResource("2_v12ck")
 hframes = 4
 vframes = 2
 
@@ -103,22 +103,14 @@ libraries = {
 [node name="HitBox" type="Area2D" parent="EnemyCharacter"]
 
 [node name="HitBox" type="CollisionShape2D" parent="EnemyCharacter/HitBox"]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_rbk1d")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_b6e6f")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-86, 9)
-rotation = 0.563316
-
-[node name="Path2" type="Path2D" parent="."]
-curve = SubResource("Curve2D_b6e6f")
-
-[node name="PathFollow2" type="PathFollow2D" parent="Path2"]
-position = Vector2(-86, 9)
-rotation = 0.563316
+position = Vector2(-85, -60)
+rotation = 1.5876
 
 [connection signal="body_entered" from="EnemyCharacter/DetectionZone" to="EnemyCharacter" method="_on_detection_zone_body_entered"]
 [connection signal="body_exited" from="EnemyCharacter/DetectionZone" to="EnemyCharacter" method="_on_detection_zone_body_exited"]

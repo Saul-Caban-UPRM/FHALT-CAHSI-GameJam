@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://vct6jifi6qy3"]
+
+[ext_resource type="PackedScene" uid="uid://53qeqk3jj4y5" path="res://Levels/level1/levels.tscn" id="1_5wg7u"]
+[ext_resource type="PackedScene" uid="uid://duha05b4gw5c8" path="res://Scenes/player.tscn" id="2_d4tca"]
+[ext_resource type="PackedScene" uid="uid://bk0wvo0iuwci7" path="res://Levels/level1/coin_holder.tscn" id="3_5a4dg"]
+[ext_resource type="PackedScene" uid="uid://2f7p21y8mvwf" path="res://Scenes/enemies.tscn" id="3_phtaf"]
+[ext_resource type="PackedScene" uid="uid://dtgvpj18kqthm" path="res://Scenes/hiding_spots.tscn" id="4_5a4dg"]
+[ext_resource type="PackedScene" uid="uid://c4u6odgwo0nr7" path="res://Scenes/door.tscn" id="4_d4tca"]
+[ext_resource type="Script" uid="uid://k7m57wtrdwtk" path="res://Scripts/jump_scare_camera.gd" id="5_bmenl"]
+[ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/ThisJumpScare.mp3" id="6_x0ltu"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_k7acu"]
+file = "JumpScare/ThisJumpScare.ogg"
+
+[node name="World" type="Node2D"]
+
+[node name="Levels" parent="." instance=ExtResource("1_5wg7u")]
+
+[node name="Door" parent="." instance=ExtResource("4_d4tca")]
+position = Vector2(32, -48)
+
+[node name="CoinHolder" parent="." instance=ExtResource("3_5a4dg")]
+position = Vector2(352, -53)
+
+[node name="Player" parent="." instance=ExtResource("2_d4tca")]
+position = Vector2(66, -444)
+
+[node name="Enemies" parent="." instance=ExtResource("3_phtaf")]
+position = Vector2(206, -436)
+scale = Vector2(0.38, 0.38)
+
+[node name="Enemies2" parent="." instance=ExtResource("3_phtaf")]
+position = Vector2(215, -220)
+scale = Vector2(0.38, 0.38)
+
+[node name="Enemies3" parent="." instance=ExtResource("3_phtaf")]
+position = Vector2(219, -53)
+scale = Vector2(0.38, 0.38)
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="HidingSpots" parent="Boxes" instance=ExtResource("4_5a4dg")]
+position = Vector2(356, -24)
+scale = Vector2(0.5, 0.5)
+
+[node name="HidingSpots2" parent="Boxes" instance=ExtResource("4_5a4dg")]
+position = Vector2(265, -194)
+scale = Vector2(0.5, 0.5)
+
+[node name="HidingSpots3" parent="." instance=ExtResource("4_5a4dg")]
+position = Vector2(167, -376)
+scale = Vector2(0.5, 0.5)
+
+[node name="JumpScareCamera" type="Camera2D" parent="."]
+process_mode = 3
+position = Vector2(637, 362)
+script = ExtResource("5_bmenl")
+
+[node name="Control" type="Control" parent="JumpScareCamera"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -637.0
+offset_top = -362.0
+offset_right = -637.0
+offset_bottom = -362.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
+stream = ExtResource("6_x0ltu")
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
+layout_mode = 0
+offset_left = -122.0
+offset_top = -44.0
+offset_right = 1798.0
+offset_bottom = 1036.0
+scale = Vector2(0.75, 0.75)
+stream = SubResource("VideoStreamTheora_k7acu")
+volume_db = -80.0
+
+[node name="TextureRect" type="TextureRect" parent="JumpScareCamera/Control"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0

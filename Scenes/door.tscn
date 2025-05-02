@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4u6odgwo0nr7"]
+
+[ext_resource type="Script" uid="uid://dr67nxvl6byqp" path="res://Scripts/area_2d.gd" id="1_p0e35"]
+[ext_resource type="Texture2D" uid="uid://bob6njo34u8u1" path="res://Assets/DoorEnter.png" id="2_fahql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_p0e35")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("2_fahql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_50cdl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
