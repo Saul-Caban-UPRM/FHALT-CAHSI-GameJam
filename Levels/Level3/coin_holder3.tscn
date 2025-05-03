@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfetbm2egsgt1"]
+
+[ext_resource type="Script" uid="uid://bmtol55qdsu2h" path="res://Scripts/coin_holder3.gd" id="1_1pw3l"]
+[ext_resource type="Texture2D" uid="uid://b1k8rtefcc3gy" path="res://Assets/WSBCoin.png" id="2_shlnk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6aaf"]
+
+[node name="CoinHolder" type="Node2D"]
+script = ExtResource("1_1pw3l")
+
+[node name="Coins" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Coins"]
+texture_filter = 1
+texture = ExtResource("2_shlnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coins"]
+shape = SubResource("CircleShape2D_l6aaf")
+
+[connection signal="body_entered" from="Coins" to="." method="_on_coins_body_entered"]

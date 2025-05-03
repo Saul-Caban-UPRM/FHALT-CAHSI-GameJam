@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://vct6jifi6qy3"]
+[gd_scene load_steps=12 format=3 uid="uid://vct6jifi6qy3"]
 
+[ext_resource type="Texture2D" uid="uid://72alcb1jgjn8" path="res://Assets/Sprite-0002.png" id="1_5a4dg"]
 [ext_resource type="PackedScene" uid="uid://53qeqk3jj4y5" path="res://Levels/level1/levels.tscn" id="1_5wg7u"]
 [ext_resource type="PackedScene" uid="uid://duha05b4gw5c8" path="res://Scenes/player.tscn" id="2_d4tca"]
 [ext_resource type="PackedScene" uid="uid://bk0wvo0iuwci7" path="res://Levels/level1/coin_holder.tscn" id="3_5a4dg"]
@@ -8,13 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://c4u6odgwo0nr7" path="res://Scenes/door.tscn" id="4_d4tca"]
 [ext_resource type="Script" uid="uid://k7m57wtrdwtk" path="res://Scripts/jump_scare_camera.gd" id="5_bmenl"]
 [ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/ThisJumpScare.mp3" id="6_x0ltu"]
+[ext_resource type="PackedScene" uid="uid://biccq8ibl2qhm" path="res://plushies/plushies.tscn" id="10_bmenl"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_k7acu"]
 file = "JumpScare/ThisJumpScare.ogg"
 
 [node name="World" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -379.0
+offset_top = -639.0
+offset_right = 758.0
+texture = ExtResource("1_5a4dg")
+
 [node name="Levels" parent="." instance=ExtResource("1_5wg7u")]
+
+[node name="Plushies" parent="." instance=ExtResource("10_bmenl")]
+position = Vector2(264, -505)
 
 [node name="Door" parent="." instance=ExtResource("4_d4tca")]
 position = Vector2(32, -48)

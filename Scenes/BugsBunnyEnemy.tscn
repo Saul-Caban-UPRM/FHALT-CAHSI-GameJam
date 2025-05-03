@@ -66,7 +66,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbk1d"]
-size = Vector2(30, 32)
+size = Vector2(36, 36)
 
 [sub_resource type="Curve2D" id="Curve2D_b6e6f"]
 _data = {
@@ -103,6 +103,7 @@ libraries = {
 [node name="HitBox" type="Area2D" parent="EnemyCharacter"]
 
 [node name="HitBox" type="CollisionShape2D" parent="EnemyCharacter/HitBox"]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_rbk1d")
 
 [node name="Path2D" type="Path2D" parent="."]

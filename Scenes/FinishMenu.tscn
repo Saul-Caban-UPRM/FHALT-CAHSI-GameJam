@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgqywy4saa6qa"]
+
+[ext_resource type="Script" uid="uid://c1kqli58dkmj7" path="res://Scenes/finish_menu.gd" id="1_ryso5"]
+[ext_resource type="Texture2D" uid="uid://b8gn7q2rlrc84" path="res://Assets/MainMenu.png" id="2_kr67t"]
+[ext_resource type="Texture2D" uid="uid://tbxekr75lshk" path="res://Assets/Again.png" id="4_o8lhu"]
+[ext_resource type="Texture2D" uid="uid://dglhonvqyg3os" path="res://Assets/Quit.png" id="5_ryso5"]
+[ext_resource type="Texture2D" uid="uid://0hmqgi4f0f8l" path="res://Assets/Plushies/ballora.png" id="6_o8lhu"]
+[ext_resource type="Texture2D" uid="uid://dlvfbnp72iwdd" path="res://Assets/Plushies/bonnie.png" id="7_k03q2"]
+[ext_resource type="Texture2D" uid="uid://bmx4y46jpi35r" path="res://Assets/Plushies/chica.png" id="8_jgmfo"]
+[ext_resource type="Texture2D" uid="uid://3tw8nnsk2c4s" path="res://Assets/Plushies/foxy.png" id="9_uhgyk"]
+[ext_resource type="Texture2D" uid="uid://b7co3vamtgdx6" path="res://Assets/Plushies/golden-plush.png" id="10_0xwvc"]
+
+[node name="FinsishMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ryso5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 720.0
+scale = Vector2(1.00372, 1.0034)
+texture = ExtResource("2_kr67t")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.897
+offset_top = 201.092
+offset_right = 11.1028
+offset_bottom = 273.092
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.12586, 2.12586)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Quit" type="Button" parent="TextureRect/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+icon = ExtResource("5_ryso5")
+
+[node name="Play" type="Button" parent="TextureRect/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+icon = ExtResource("4_o8lhu")
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.319
+offset_top = 40.6378
+offset_right = -4.31909
+offset_bottom = 112.638
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.12586, 2.12586)
+
+[node name="PlushiesHolder" type="HBoxContainer" parent="TextureRect/MarginContainer2"]
+layout_mode = 2
+
+[node name="Ballora" type="Sprite2D" parent="TextureRect/MarginContainer2/PlushiesHolder"]
+texture_filter = 1
+position = Vector2(296.787, -38.253)
+scale = Vector2(2.28713, 2.28713)
+texture = ExtResource("6_o8lhu")
+hframes = 10
+
+[node name="Bonnie" type="Sprite2D" parent="TextureRect/MarginContainer2/PlushiesHolder"]
+texture_filter = 1
+position = Vector2(373.502, -38.253)
+scale = Vector2(2.28713, 2.28713)
+texture = ExtResource("7_k03q2")
+hframes = 10
+
+[node name="Chica" type="Sprite2D" parent="TextureRect/MarginContainer2/PlushiesHolder"]
+texture_filter = 1
+position = Vector2(133.395, -38.253)
+scale = Vector2(2.28698, 2.28698)
+texture = ExtResource("8_jgmfo")
+hframes = 10
+
+[node name="Foxy" type="Sprite2D" parent="TextureRect/MarginContainer2/PlushiesHolder"]
+texture_filter = 1
+position = Vector2(203.135, -38.253)
+scale = Vector2(2.28698, 2.28698)
+texture = ExtResource("9_uhgyk")
+hframes = 10
+
+[node name="Golden-plush" type="Sprite2D" parent="TextureRect/MarginContainer2/PlushiesHolder"]
+texture_filter = 1
+position = Vector2(44.4535, -38.2527)
+scale = Vector2(2.28698, 2.28698)
+texture = ExtResource("10_0xwvc")
+hframes = 10
+
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]

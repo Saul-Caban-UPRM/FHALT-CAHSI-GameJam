@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjxjx8agqqcd7"]
+[gd_scene load_steps=15 format=3 uid="uid://cjxjx8agqqcd7"]
 
 [ext_resource type="PackedScene" uid="uid://ketu8asmx0i1" path="res://Levels/level2/levels2.tscn" id="1_cllis"]
+[ext_resource type="Texture2D" uid="uid://72alcb1jgjn8" path="res://Assets/Sprite-0002.png" id="1_graan"]
 [ext_resource type="PackedScene" uid="uid://duha05b4gw5c8" path="res://Scenes/player.tscn" id="2_0j22h"]
 [ext_resource type="PackedScene" uid="uid://2f7p21y8mvwf" path="res://Scenes/enemies.tscn" id="3_dej7o"]
 [ext_resource type="PackedScene" uid="uid://d066j1ctiy1cr" path="res://Scenes/BugsBunnyEnemy.tscn" id="4_0j22h"]
 [ext_resource type="PackedScene" uid="uid://dtgvpj18kqthm" path="res://Scenes/hiding_spots.tscn" id="4_graan"]
+[ext_resource type="PackedScene" uid="uid://dsysuvpk3ipxc" path="res://Levels/level2/coin_holder2.tscn" id="4_l5gqc"]
+[ext_resource type="PackedScene" uid="uid://cpswj2rtaebvh" path="res://plushies/plushies2.tscn" id="4_xnawm"]
+[ext_resource type="Script" uid="uid://bfo207quu6o2b" path="res://Scripts/coin_holder.gd" id="5_44j84"]
 [ext_resource type="Script" uid="uid://k7m57wtrdwtk" path="res://Scripts/jump_scare_camera.gd" id="5_l5gqc"]
+[ext_resource type="PackedScene" uid="uid://b8kl4d2ate6lk" path="res://plushies/plushies3.tscn" id="5_xnawm"]
 [ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/ThisJumpScare.mp3" id="6_44j84"]
 [ext_resource type="PackedScene" uid="uid://lwqx880vkwla" path="res://Levels/level2/door2.tscn" id="8_dej7o"]
 
@@ -14,13 +19,37 @@ file = "JumpScare/ThisJumpScare.ogg"
 
 [node name="World" type="Node2D"]
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -889.0
+offset_top = -753.0
+offset_right = 248.0
+offset_bottom = -114.0
+scale = Vector2(1915.68, 1.42943)
+texture = ExtResource("1_graan")
+
 [node name="Levels" parent="." instance=ExtResource("1_cllis")]
 
 [node name="Door" parent="." instance=ExtResource("8_dej7o")]
 position = Vector2(640, -88)
 
+[node name="Plushies2" parent="." instance=ExtResource("4_xnawm")]
+position = Vector2(436, -92)
+
+[node name="Plushies3" parent="." instance=ExtResource("5_xnawm")]
+position = Vector2(11, -500)
+
+[node name="CoinHolder" parent="." instance=ExtResource("4_l5gqc")]
+position = Vector2(61, -63)
+
+[node name="CoinHolder2" parent="." instance=ExtResource("4_l5gqc")]
+position = Vector2(515, -370)
+
+[node name="CoinHolder3" parent="." instance=ExtResource("4_l5gqc")]
+position = Vector2(515, -370)
+script = ExtResource("5_44j84")
+
 [node name="Player" parent="." instance=ExtResource("2_0j22h")]
-position = Vector2(19.0001, -583)
+position = Vector2(48, -586)
 
 [node name="Enemies" parent="." instance=ExtResource("3_dej7o")]
 position = Vector2(379, -444)
@@ -28,6 +57,10 @@ scale = Vector2(0.38, 0.38)
 
 [node name="Enemies2" parent="." instance=ExtResource("4_0j22h")]
 position = Vector2(435, -93)
+scale = Vector2(0.38, 0.38)
+
+[node name="Enemies5" parent="." instance=ExtResource("4_0j22h")]
+position = Vector2(244, -583)
 scale = Vector2(0.38, 0.38)
 
 [node name="Enemies3" parent="." instance=ExtResource("3_dej7o")]
