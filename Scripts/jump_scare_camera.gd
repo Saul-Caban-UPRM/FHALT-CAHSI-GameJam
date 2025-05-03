@@ -3,8 +3,11 @@ extends Camera2D
 @onready var vp = $Control/VideoPlayer
 @onready var ap = $Control/AudioStreamPlayer2D
 @onready var main_cam: Camera2D = $"../Player/CharacterBody2D/Camera2D"
-func start_jumpscare():
+@onready var minimap   = get_tree().get_current_scene().get_node("Minimap")  
 
+func start_jumpscare():
+	if minimap:
+		minimap.hide()
 	make_current()
 	
 	# Pause scene AFTER camera is active
@@ -14,7 +17,8 @@ func start_jumpscare():
 	# Play jumpscare
 	ap.play()
 	vp.play()
-
+	if minimap:
+		minimap.visible = false
 	# Wait for video to finish
 	await vp.finished
 
@@ -24,3 +28,5 @@ func start_jumpscare():
 	# Reset jumpscare
 	vp.stop()
 	ap.stop()
+	if minimap:
+		minimap.visible = true

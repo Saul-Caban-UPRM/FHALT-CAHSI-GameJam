@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy8v43rkkxfg1"]
+[gd_scene load_steps=15 format=3 uid="uid://cy8v43rkkxfg1"]
 
 [ext_resource type="PackedScene" uid="uid://crt6j8cqpml7f" path="res://Levels/Level3/levels3.tscn" id="1_2kqk4"]
 [ext_resource type="Texture2D" uid="uid://72alcb1jgjn8" path="res://Assets/Sprite-0002.png" id="1_vjyig"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://k7m57wtrdwtk" path="res://Scripts/jump_scare_camera.gd" id="6_dlxvy"]
 [ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/ThisJumpScare.mp3" id="7_5lh3q"]
 [ext_resource type="PackedScene" uid="uid://dmq1uyw2l3k34" path="res://Levels/Level3/door3.tscn" id="10_dpu3q"]
+[ext_resource type="PackedScene" uid="uid://by60s7gwh6s53" path="res://minimap.tscn" id="11_hu0uc"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_k7acu"]
 file = "JumpScare/ThisJumpScare.ogg"
@@ -98,6 +99,8 @@ scale = Vector2(0.5, 0.5)
 [node name="HidingSpots3" parent="." instance=ExtResource("5_c6y3h")]
 position = Vector2(456, -544)
 scale = Vector2(0.5, 0.5)
+
+[node name="Minimap" parent="." instance=ExtResource("11_hu0uc")]
 
 [node name="JumpScareCamera" type="Camera2D" parent="."]
 process_mode = 3

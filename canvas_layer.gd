@@ -19,8 +19,10 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("Next") and GameState.GameScene == 3:
 		$AnimationPlayer.play("Fade_out")
 		await $AnimationPlayer.animation_finished
-		GameState.ResetGameScene()
-		get_tree().change_scene_to_file("res://Menus/FinishMenu.tscn")
+		GameState.NextGameScene()
+		get_tree().change_scene_to_file("res://Levels/level3/Level3.tscn")
+
+		
 
 	
 	
