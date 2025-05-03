@@ -1,22 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://sdw01k2qo1x"]
 
-[ext_resource type="Script" uid="uid://g70nc7o0ugqb" path="res://Scripts/node_2d.gd" id="1_ag61l"]
-[ext_resource type="Texture2D" uid="uid://b8gn7q2rlrc84" path="res://Assets/MainMenu.png" id="2_0vg17"]
-[ext_resource type="Texture2D" uid="uid://dt4gwx4g3wa3o" path="res://Assets/Start game.png" id="3_xggpq"]
-[ext_resource type="Texture2D" uid="uid://dtha7pmpqw5e3" path="res://Assets/Howtoplay.png" id="4_7gq8w"]
-[ext_resource type="Texture2D" uid="uid://dglhonvqyg3os" path="res://Assets/Quit.png" id="5_h5koh"]
+[ext_resource type="Script" uid="uid://g70nc7o0ugqb" path="res://Menus/node_2d.gd" id="1_ax5ce"]
+[ext_resource type="Texture2D" uid="uid://b8gn7q2rlrc84" path="res://Assets/MainMenu.png" id="2_dtclk"]
+[ext_resource type="Texture2D" uid="uid://dt4gwx4g3wa3o" path="res://Assets/Start game.png" id="3_onpd1"]
+[ext_resource type="Texture2D" uid="uid://dtha7pmpqw5e3" path="res://Assets/Howtoplay.png" id="4_skixr"]
+[ext_resource type="Texture2D" uid="uid://dglhonvqyg3os" path="res://Assets/Quit.png" id="5_xmlie"]
 
 [node name="StartUpMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_ag61l")
+script = ExtResource("1_ax5ce")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1281.0
+offset_left = 44.0
+offset_right = 1325.0
 offset_bottom = 720.0
 scale = Vector2(1.00372, 1.0034)
-texture = ExtResource("2_0vg17")
+texture = ExtResource("2_dtclk")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
@@ -39,17 +40,17 @@ layout_mode = 2
 [node name="Play" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-icon = ExtResource("3_xggpq")
+icon = ExtResource("3_onpd1")
 
 [node name="HowToplay" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-icon = ExtResource("4_7gq8w")
+icon = ExtResource("4_skixr")
 
 [node name="Quit" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-icon = ExtResource("5_h5koh")
+icon = ExtResource("5_xmlie")
 
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HowToplay" to="." method="_on_how_toplay_pressed"]

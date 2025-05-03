@@ -7,7 +7,7 @@ func _input(event: InputEvent) -> void:
 		if GameState.coins_collected >= GameState.required_coins:
 			GameState.ResetCoinsCollected()
 			GameState.AddRequiredCoins()
-			get_tree().change_scene_to_file("res://Levels/level2/Level2.tscn")
+			get_tree().change_scene_to_file("res://loor2.tscn")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

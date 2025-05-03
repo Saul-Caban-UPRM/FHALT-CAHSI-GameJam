@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddexegqoag4w8"]
 
-[ext_resource type="Texture2D" uid="uid://b8gn7q2rlrc84" path="res://Assets/MainMenu.png" id="1_0mtfm"]
-[ext_resource type="Script" uid="uid://dch784i8hde8h" path="res://Scenes/how_to_play.gd" id="1_r8rx6"]
-[ext_resource type="Texture2D" uid="uid://be0fe42q3uhag" path="res://Assets/Screenshot 2025-05-03 091617.png" id="2_gmf7q"]
-[ext_resource type="FontFile" uid="uid://csb1hwycfcw10" path="res://Assets/PressStart2P.ttf" id="3_gmf7q"]
+[ext_resource type="Script" uid="uid://dch784i8hde8h" path="res://Menus/how_to_play.gd" id="1_fnarp"]
+[ext_resource type="Texture2D" uid="uid://b8gn7q2rlrc84" path="res://Assets/MainMenu.png" id="2_wcvkl"]
+[ext_resource type="Texture2D" uid="uid://be0fe42q3uhag" path="res://Assets/Screenshot 2025-05-03 091617.png" id="3_m3ol6"]
+[ext_resource type="FontFile" uid="uid://csb1hwycfcw10" path="res://Assets/PressStart2P.ttf" id="4_slw65"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_r8rx6")
+script = ExtResource("1_fnarp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1283.0
 offset_bottom = 720.0
-texture = ExtResource("1_0mtfm")
+texture = ExtResource("2_wcvkl")
 
 [node name="HowToPlay" type="TextureRect" parent="TextureRect"]
 layout_mode = 1
@@ -29,7 +29,7 @@ offset_right = 309.5
 offset_bottom = 307.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_gmf7q")
+texture = ExtResource("3_m3ol6")
 
 [node name="Back" type="Button" parent="."]
 texture_filter = 1
@@ -38,7 +38,7 @@ offset_left = 1051.0
 offset_top = 641.0
 offset_right = 1279.0
 offset_bottom = 717.0
-theme_override_fonts/font = ExtResource("3_gmf7q")
+theme_override_fonts/font = ExtResource("4_slw65")
 text = "Back
 "
 

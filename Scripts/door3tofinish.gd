@@ -12,5 +12,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if can_interact and event.is_action_pressed("Interact"):
+		print(GameState.coins_collected)
+		print(GameState.required_coins)
 		if GameState.coins_collected >= GameState.required_coins:
-			get_tree().change_scene_to_file("res://Scenes/FinishMenu.tscn")
+			get_tree().change_scene_to_file("res://loor3.tscn")
