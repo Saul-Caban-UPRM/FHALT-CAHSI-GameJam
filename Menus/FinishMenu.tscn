@@ -69,10 +69,13 @@ script = ExtResource("1_ryso5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1281.0
-offset_bottom = 720.0
-scale = Vector2(1.00372, 1.0034)
+offset_left = 3.0
+offset_top = -5.0
+offset_right = 1378.0
+offset_bottom = 716.0
+scale = Vector2(0.998058, 1.00689)
 texture = ExtResource("2_kr67t")
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
