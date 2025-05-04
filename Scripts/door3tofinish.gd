@@ -13,5 +13,6 @@ func _on_body_exited(body: Node2D) -> void:
 func _input(event: InputEvent) -> void:
 	if can_interact and event.is_action_pressed("Interact"):
 		if GameState.coins_collected >= GameState.required_coins:
-			GameState.ResetGameScene()
-			get_tree().change_scene_to_file("res://Menus/FinishMenu.tscn")
+			GameState.SetScene("Lore4")
+			MusicManager.update_music(GameState.scene)
+			get_tree().change_scene_to_file("res://loor4.tscn")

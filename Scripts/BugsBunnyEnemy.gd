@@ -18,6 +18,7 @@ func _physics_process(delta):
 			is_chasing = false
 			player = null
 			returning_to_patrol = true
+			MusicManager.stop_chase_music()
 			return
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * chase_speed
@@ -44,6 +45,7 @@ func _on_detection_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and !body.is_hiding:
 		player = body
 		is_chasing = true
+		MusicManager.play_chase_music()
 		print("Chasing player!")
 
 func _on_detection_zone_body_exited(body: Node2D) -> void:
@@ -51,8 +53,11 @@ func _on_detection_zone_body_exited(body: Node2D) -> void:
 		is_chasing = false
 		player = null
 		returning_to_patrol = true
+		MusicManager.stop_chase_music()
+		
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		body.reset_to_spawn()
+		MusicManager.stop_chase_music()
 		js_cam.start_jumpscare()

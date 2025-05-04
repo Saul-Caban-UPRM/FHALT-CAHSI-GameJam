@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsysuvpk3ipxc"]
+[gd_scene load_steps=5 format=3 uid="uid://dsysuvpk3ipxc"]
 
 [ext_resource type="Script" uid="uid://ok7utnmgykq7" path="res://Scripts/coin_holder2.gd" id="1_ovn3u"]
 [ext_resource type="Texture2D" uid="uid://b1k8rtefcc3gy" path="res://Assets/WSBCoin.png" id="2_6xrnh"]
+[ext_resource type="AudioStream" uid="uid://dpb4nnlsye0ni" path="res://JumpScare/audio/Collected.wav" id="3_mi4k5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6aaf"]
 
@@ -16,5 +17,8 @@ texture = ExtResource("2_6xrnh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coins"]
 shape = SubResource("CircleShape2D_l6aaf")
+
+[node name="CoinsAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mi4k5")
 
 [connection signal="body_entered" from="Coins" to="." method="_on_coins_body_entered"]

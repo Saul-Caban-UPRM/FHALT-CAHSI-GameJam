@@ -1,14 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://53qeqk3jj4y5"]
+[gd_scene load_steps=7 format=4 uid="uid://53qeqk3jj4y5"]
 
 [ext_resource type="Texture2D" uid="uid://bt0ihxo3sv6gc" path="res://Assets/Sprite-0003.png" id="1_48rmr"]
 [ext_resource type="Texture2D" uid="uid://g3g14ewpkr7a" path="res://Assets/Blood1.png" id="2_lcpqf"]
 [ext_resource type="Texture2D" uid="uid://cghuw47ddlf15" path="res://Assets/Blood2.png" id="3_pyoft"]
 [ext_resource type="Texture2D" uid="uid://cpmdapddiu83i" path="res://Assets/blood3.png" id="4_0xnmj"]
-[ext_resource type="Texture2D" uid="uid://0hmqgi4f0f8l" path="res://Assets/Plushies/ballora.png" id="5_qaud4"]
-[ext_resource type="Texture2D" uid="uid://dlvfbnp72iwdd" path="res://Assets/Plushies/bonnie.png" id="6_2w3h3"]
-[ext_resource type="Texture2D" uid="uid://bmx4y46jpi35r" path="res://Assets/Plushies/chica.png" id="7_f7kth"]
-[ext_resource type="Texture2D" uid="uid://3tw8nnsk2c4s" path="res://Assets/Plushies/foxy.png" id="8_xen0t"]
-[ext_resource type="Texture2D" uid="uid://b7co3vamtgdx6" path="res://Assets/Plushies/golden-plush.png" id="9_ir31t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh33m"]
 texture = ExtResource("1_48rmr")
@@ -147,43 +142,3 @@ texture = ExtResource("4_0xnmj")
 texture_filter = 1
 position = Vector2(250, -158)
 texture = ExtResource("4_0xnmj")
-
-[node name="Ballora" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(228, -420)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_qaud4")
-hframes = 10
-
-[node name="Bonnie" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(228, -412)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_2w3h3")
-hframes = 10
-
-[node name="Chica" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(228, -436)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_f7kth")
-hframes = 10
-
-[node name="Foxy" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(228, -428)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_xen0t")
-hframes = 10
-
-[node name="Golden-plush" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(229, -444)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_ir31t")
-hframes = 10

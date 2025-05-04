@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biccq8ibl2qhm"]
+[gd_scene load_steps=9 format=3 uid="uid://biccq8ibl2qhm"]
 
 [ext_resource type="Script" uid="uid://bra6e08svkuq2" path="res://plushies/Golden.gd" id="1_st0xv"]
 [ext_resource type="Texture2D" uid="uid://dlvfbnp72iwdd" path="res://Assets/Plushies/bonnie.png" id="2_je4il"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0hmqgi4f0f8l" path="res://Assets/Plushies/ballora.png" id="4_w25n0"]
 [ext_resource type="Texture2D" uid="uid://b7co3vamtgdx6" path="res://Assets/Plushies/golden-plush.png" id="5_qq2a2"]
 [ext_resource type="Texture2D" uid="uid://3tw8nnsk2c4s" path="res://Assets/Plushies/foxy.png" id="6_ldbti"]
+[ext_resource type="AudioStream" uid="uid://dpb4nnlsye0ni" path="res://JumpScare/audio/Collected.wav" id="7_fx860"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eayk3"]
 size = Vector2(9, 9)
@@ -52,5 +53,8 @@ texture_filter = 1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_ldbti")
 hframes = 10
+
+[node name="Collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fx860")
 
 [connection signal="body_entered" from="Ballora" to="." method="_on_ballora_body_entered"]

@@ -2,6 +2,8 @@ extends Control
 
 
 func _on_play_pressed() -> void:
+	GameState.SetScene("Lore1")
+	MusicManager.update_music(GameState.scene)
 	get_tree().change_scene_to_file("res://loor.tscn")
 
 

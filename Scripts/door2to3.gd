@@ -14,4 +14,6 @@ func _input(event: InputEvent) -> void:
 	if can_interact and event.is_action_pressed("Interact"):
 		if GameState.coins_collected >= GameState.required_coins:
 			GameState.ResetCoinsCollected()
-			get_tree().change_scene_to_file("res://loor2.tscn")
+			GameState.SetScene("Lore3")
+			MusicManager.update_music(GameState.scene)
+			get_tree().change_scene_to_file("res://loor3.tscn")
