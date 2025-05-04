@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bfo207quu6o2b" path="res://Scripts/coin_holder.gd" id="5_44j84"]
 [ext_resource type="Script" uid="uid://k7m57wtrdwtk" path="res://Scripts/jump_scare_camera.gd" id="5_l5gqc"]
 [ext_resource type="PackedScene" uid="uid://b8kl4d2ate6lk" path="res://plushies/plushies3.tscn" id="5_xnawm"]
-[ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/ThisJumpScare.mp3" id="6_44j84"]
+[ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/audio/JumpScare1.mp3" id="6_44j84"]
 [ext_resource type="PackedScene" uid="uid://lwqx880vkwla" path="res://Levels/level2/door2.tscn" id="8_dej7o"]
 [ext_resource type="PackedScene" uid="uid://by60s7gwh6s53" path="res://minimap.tscn" id="12_wwuh1"]
 

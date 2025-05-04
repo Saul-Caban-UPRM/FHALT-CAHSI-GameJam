@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b184vmi6ia0wx" path="res://plushies/plushies5.tscn" id="4_hu0uc"]
 [ext_resource type="PackedScene" uid="uid://dtgvpj18kqthm" path="res://Scenes/hiding_spots.tscn" id="5_c6y3h"]
 [ext_resource type="Script" uid="uid://k7m57wtrdwtk" path="res://Scripts/jump_scare_camera.gd" id="6_dlxvy"]
-[ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/ThisJumpScare.mp3" id="7_5lh3q"]
+[ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/audio/JumpScare1.mp3" id="7_5lh3q"]
 [ext_resource type="PackedScene" uid="uid://dmq1uyw2l3k34" path="res://Levels/Level3/door3.tscn" id="10_dpu3q"]
 [ext_resource type="PackedScene" uid="uid://by60s7gwh6s53" path="res://minimap.tscn" id="11_hu0uc"]
 

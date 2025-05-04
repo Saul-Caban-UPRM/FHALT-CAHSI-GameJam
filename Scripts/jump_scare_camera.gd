@@ -1,32 +1,49 @@
 extends Camera2D
-
-@onready var vp = $Control/VideoPlayer
-@onready var ap = $Control/AudioStreamPlayer2D
 @onready var main_cam: Camera2D = $"../Player/CharacterBody2D/Camera2D"
-@onready var minimap   = get_tree().get_current_scene().get_node("Minimap")  
+@onready var minimap = get_tree().get_current_scene().get_node("Minimap")
+
+var jumpscares = []
+
+func _ready():
+
+	randomize()
+
+	jumpscares = [
+		{"video": $Control/JumpScareVideo1, "audio": $Control/JumpScare1},
+		{"video": $Control/JumpScareVideo2, "audio": $Control/JumpScare2},
+		{"video": $Control/JumpScareVideo3, "audio": $Control/JumpScare3},
+		{"video": $Control/JumpScareVideo4, "audio": $Control/JumpScare4},
+		{"video": $Control/JumpScareVideo5, "audio": $Control/JumpScare5}
+	]
 
 func start_jumpscare():
+
+	var choice = jumpscares[randi() % jumpscares.size()]
+	var vp = choice["video"]
+	var ap = choice["audio"]
+
 	if minimap:
 		minimap.hide()
+
+
 	make_current()
 	
-	# Pause scene AFTER camera is active
-	await get_tree().process_frame  # ensure camera change takes effect
+
+	await get_tree().process_frame
 	get_tree().paused = true
 
-	# Play jumpscare
+
 	ap.play()
 	vp.play()
-	if minimap:
-		minimap.visible = false
-	# Wait for video to finish
+
+
 	await vp.finished
 
-	# Unpause and switch back to MainCamera
 	get_tree().paused = false
 	main_cam.make_current()
-	# Reset jumpscare
+
 	vp.stop()
 	ap.stop()
+
 	if minimap:
-		minimap.visible = true
+		minimap.show()

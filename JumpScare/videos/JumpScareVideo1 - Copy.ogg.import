@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djpmhc0wg3g80"
+path="res://.godot/imported/JumpScareVideo1 - Copy.ogg-2ef1b273fb29d427b29ecbb247bf88cd.oggvorbisstr"
+
+[deps]
+
+source_file="res://JumpScare/videos/JumpScareVideo1 - Copy.ogg"
+dest_files=["res://.godot/imported/JumpScareVideo1 - Copy.ogg-2ef1b273fb29d427b29ecbb247bf88cd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
