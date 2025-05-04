@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjxjx8agqqcd7"]
+[gd_scene load_steps=25 format=3 uid="uid://cjxjx8agqqcd7"]
 
 [ext_resource type="PackedScene" uid="uid://ketu8asmx0i1" path="res://Levels/level2/levels2.tscn" id="1_cllis"]
 [ext_resource type="Texture2D" uid="uid://72alcb1jgjn8" path="res://Assets/Sprite-0002.png" id="1_graan"]
+[ext_resource type="Script" uid="uid://lgev7pbellmq" path="res://Levels/level2/level_2.gd" id="1_ug541"]
 [ext_resource type="PackedScene" uid="uid://duha05b4gw5c8" path="res://Scenes/player.tscn" id="2_0j22h"]
 [ext_resource type="PackedScene" uid="uid://2f7p21y8mvwf" path="res://Scenes/enemies.tscn" id="3_dej7o"]
 [ext_resource type="PackedScene" uid="uid://d066j1ctiy1cr" path="res://Scenes/BugsBunnyEnemy.tscn" id="4_0j22h"]
@@ -14,11 +15,28 @@
 [ext_resource type="AudioStream" uid="uid://d5isp6lmncc7" path="res://JumpScare/audio/JumpScare1.mp3" id="6_44j84"]
 [ext_resource type="PackedScene" uid="uid://lwqx880vkwla" path="res://Levels/level2/door2.tscn" id="8_dej7o"]
 [ext_resource type="PackedScene" uid="uid://by60s7gwh6s53" path="res://minimap.tscn" id="12_wwuh1"]
+[ext_resource type="AudioStream" uid="uid://dgbqrlbjyqmsk" path="res://JumpScare/audio/JumpScare2.mp3" id="15_bq3rp"]
+[ext_resource type="AudioStream" uid="uid://bs6kxpujjojqo" path="res://JumpScare/audio/JumpScare3.mp3" id="16_ug541"]
+[ext_resource type="AudioStream" uid="uid://2sn6qnfcuqnb" path="res://JumpScare/audio/JumpScare4.mp3" id="17_fhk4s"]
+[ext_resource type="AudioStream" uid="uid://chbanbc4o0d4i" path="res://JumpScare/audio/JumpScare5.mp3" id="18_d2fcu"]
 
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_k7acu"]
-file = "JumpScare/ThisJumpScare.ogg"
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_r5jbe"]
+file = "res://JumpScare/videos/JumpScareVideo1 - Copy.ogg"
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_f6yuy"]
+file = "res://JumpScare/videos/JumpScareVideo2.ogg"
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_8w2dt"]
+file = "res://JumpScare/videos/JumpScareVideo3.ogg"
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_7bb1b"]
+file = "res://JumpScare/videos/JumpScareVideo4.ogg"
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_perih"]
+file = "res://JumpScare/videos/JumpScareVideo5.ogg"
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_ug541")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = -889.0
@@ -104,21 +122,64 @@ offset_right = -637.0
 offset_bottom = -362.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
+[node name="JumpScare1" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
 stream = ExtResource("6_44j84")
 
-[node name="VideoPlayer" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
-layout_mode = 0
-offset_left = -122.0
-offset_top = -44.0
-offset_right = 1798.0
-offset_bottom = 1036.0
-scale = Vector2(0.75, 0.75)
-stream = SubResource("VideoStreamTheora_k7acu")
-volume_db = -80.0
+[node name="JumpScare2" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
+stream = ExtResource("15_bq3rp")
 
-[node name="TextureRect" type="TextureRect" parent="JumpScareCamera/Control"]
+[node name="JumpScare3" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
+stream = ExtResource("16_ug541")
+
+[node name="JumpScare4" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
+stream = ExtResource("17_fhk4s")
+
+[node name="JumpScare5" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
+stream = ExtResource("18_d2fcu")
+
+[node name="JumpScareVideo1" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -345.0
+offset_top = -195.0
+offset_right = 1575.0
+offset_bottom = 885.0
+stream = SubResource("VideoStreamTheora_r5jbe")
+metadata/_edit_use_anchors_ = true
+
+[node name="JumpScareVideo2" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
+layout_mode = 0
+offset_left = -345.0
+offset_top = -195.0
+offset_right = 1575.0
+offset_bottom = 885.0
+stream = SubResource("VideoStreamTheora_f6yuy")
+metadata/_edit_use_anchors_ = true
+
+[node name="JumpScareVideo3" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
+layout_mode = 0
+offset_left = -345.0
+offset_top = -195.0
+offset_right = 1575.0
+offset_bottom = 885.0
+stream = SubResource("VideoStreamTheora_8w2dt")
+metadata/_edit_use_anchors_ = true
+
+[node name="JumpScareVideo4" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
+layout_mode = 0
+offset_left = -345.0
+offset_top = -195.0
+offset_right = 1575.0
+offset_bottom = 885.0
+stream = SubResource("VideoStreamTheora_7bb1b")
+metadata/_edit_use_anchors_ = true
+
+[node name="JumpScareVideo5" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
+layout_mode = 0
+offset_left = -345.0
+offset_top = -195.0
+offset_right = 1575.0
+offset_bottom = 885.0
+stream = SubResource("VideoStreamTheora_perih")
+metadata/_edit_use_anchors_ = true

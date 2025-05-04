@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://vct6jifi6qy3"]
+[gd_scene load_steps=22 format=3 uid="uid://vct6jifi6qy3"]
 
 [ext_resource type="Texture2D" uid="uid://72alcb1jgjn8" path="res://Assets/Sprite-0002.png" id="1_5a4dg"]
 [ext_resource type="PackedScene" uid="uid://53qeqk3jj4y5" path="res://Levels/level1/levels.tscn" id="1_5wg7u"]
+[ext_resource type="Script" uid="uid://bsuh871yl7pa0" path="res://Levels/level1/world.gd" id="1_8v12l"]
 [ext_resource type="PackedScene" uid="uid://duha05b4gw5c8" path="res://Scenes/player.tscn" id="2_d4tca"]
 [ext_resource type="PackedScene" uid="uid://bk0wvo0iuwci7" path="res://Levels/level1/coin_holder.tscn" id="3_5a4dg"]
 [ext_resource type="PackedScene" uid="uid://2f7p21y8mvwf" path="res://Scenes/enemies.tscn" id="3_phtaf"]
@@ -32,6 +33,7 @@ file = "res://JumpScare/videos/JumpScareVideo4.ogg"
 file = "res://JumpScare/videos/JumpScareVideo5.ogg"
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_8v12l")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -379.0
@@ -97,6 +99,7 @@ offset_right = -637.0
 offset_bottom = -362.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="JumpScare1" type="AudioStreamPlayer2D" parent="JumpScareCamera/Control"]
 stream = ExtResource("11_3l2yr")
@@ -120,6 +123,7 @@ offset_top = -195.0
 offset_right = 1575.0
 offset_bottom = 885.0
 stream = SubResource("VideoStreamTheora_3l2yr")
+metadata/_edit_use_anchors_ = true
 
 [node name="JumpScareVideo2" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
 layout_mode = 0
@@ -128,6 +132,7 @@ offset_top = -195.0
 offset_right = 1575.0
 offset_bottom = 885.0
 stream = SubResource("VideoStreamTheora_8v12l")
+metadata/_edit_use_anchors_ = true
 
 [node name="JumpScareVideo3" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
 layout_mode = 0
@@ -136,6 +141,7 @@ offset_top = -195.0
 offset_right = 1575.0
 offset_bottom = 885.0
 stream = SubResource("VideoStreamTheora_6njpg")
+metadata/_edit_use_anchors_ = true
 
 [node name="JumpScareVideo4" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
 layout_mode = 0
@@ -144,6 +150,7 @@ offset_top = -195.0
 offset_right = 1575.0
 offset_bottom = 885.0
 stream = SubResource("VideoStreamTheora_l52to")
+metadata/_edit_use_anchors_ = true
 
 [node name="JumpScareVideo5" type="VideoStreamPlayer" parent="JumpScareCamera/Control"]
 layout_mode = 0
@@ -152,3 +159,4 @@ offset_top = -195.0
 offset_right = 1575.0
 offset_bottom = 885.0
 stream = SubResource("VideoStreamTheora_a32wq")
+metadata/_edit_use_anchors_ = true

@@ -6,6 +6,11 @@ var Foxy = false
 var Golden_plush = false
 var GameScene = 1
 
+var scene = ""
+
+func SetScene(NewScene):
+	scene = NewScene
+	
 var coins_collected = 0
 var required_coins = 1
 func ResetCoinsCollected():
