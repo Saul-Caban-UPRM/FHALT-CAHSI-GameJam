@@ -68,9 +68,9 @@ grow_vertical = 2
 script = ExtResource("1_tw3ea")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_right = 0.909375
-anchor_bottom = 0.941667
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.06306, 1.00219)
@@ -85,8 +85,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -368.0
-offset_top = -23.0
+offset_left = -492.201
+offset_top = -69.5121
+offset_right = -124.201
+offset_bottom = -46.5121
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_ql4lk")
@@ -109,7 +111,8 @@ theme_override_fonts/font = ExtResource("3_ql4lk")
 text = "Success! You managed to escape,
         now run away!!!"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_vsq2o")
 }

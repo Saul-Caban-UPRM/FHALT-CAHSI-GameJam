@@ -68,9 +68,9 @@ grow_vertical = 2
 script = ExtResource("1_ec1a8")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_right = 0.905469
-anchor_bottom = 0.938889
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.06716, 1.00601)
@@ -85,8 +85,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -368.0
-offset_top = -23.0
+offset_left = -494.444
+offset_top = -76.1102
+offset_right = -126.444
+offset_bottom = -53.1102
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_eop2o")
@@ -111,7 +113,8 @@ As you proceed, more of those
  weird things will start
  appearing be careful!"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_vsq2o")
 }

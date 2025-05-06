@@ -68,15 +68,16 @@ grow_vertical = 2
 script = ExtResource("1_6v7qb")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_right = 0.905469
-anchor_bottom = 0.943056
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -77.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.06674, 1.01156)
 texture = ExtResource("2_f5dkh")
 expand_mode = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
@@ -104,14 +105,17 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -368.0
-offset_top = -23.0
+offset_left = -378.057
+offset_top = -30.9309
+offset_right = -10.0568
+offset_bottom = -7.93091
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_f5dkh")
 text = "Press Enter to continue"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_vsq2o")
 }

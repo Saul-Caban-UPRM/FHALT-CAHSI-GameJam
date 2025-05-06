@@ -1,13 +1,17 @@
 extends Camera2D
 @onready var main_cam: Camera2D = $"../Player/CharacterBody2D/Camera2D"
 @onready var minimap = get_tree().get_current_scene().get_node("Minimap")
-
+@onready var SprintBar = $"../Player/CharacterBody2D"
 var jumpscares = []
 
 func _ready():
 
+	$Control/JumpScareVideo1.stream = load("res://JumpScare/videos/JumpScareVideo1 - Copy.ogv")
+	$Control/JumpScareVideo2.stream = load("res://JumpScare/videos/JumpScareVideo2.ogv")
+	$Control/JumpScareVideo3.stream = load("res://JumpScare/videos/JumpScareVideo3.ogv")
+	$Control/JumpScareVideo4.stream = load("res://JumpScare/videos/JumpScareVideo4.ogv")
+	$Control/JumpScareVideo5.stream = load("res://JumpScare/videos/JumpScareVideo5.ogv")
 	randomize()
-
 	jumpscares = [
 		{"video": $Control/JumpScareVideo1, "audio": $Control/JumpScare1},
 		{"video": $Control/JumpScareVideo2, "audio": $Control/JumpScare2},
@@ -41,7 +45,7 @@ func start_jumpscare():
 
 	get_tree().paused = false
 	main_cam.make_current()
-
+	SprintBar.ShowBar()
 	vp.stop()
 	ap.stop()
 

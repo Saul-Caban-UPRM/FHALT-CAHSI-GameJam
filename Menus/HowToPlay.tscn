@@ -10,13 +10,17 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fnarp")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1283.0
-offset_bottom = 720.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_wcvkl")
 
-[node name="HowToPlay" type="TextureRect" parent="TextureRect"]
+[node name="HowToPlay" type="TextureRect" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,15 +35,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_m3ol6")
 
-[node name="Back" type="Button" parent="."]
+[node name="Back" type="Button" parent="CanvasLayer/TextureRect"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 1051.0
-offset_top = 641.0
-offset_right = 1279.0
-offset_bottom = 717.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -76.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_slw65")
 text = "Back
 "
 
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/Back" to="." method="_on_back_pressed"]

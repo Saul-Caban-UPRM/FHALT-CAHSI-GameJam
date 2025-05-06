@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://pn5mem8gm7i4"]
+
+[ext_resource type="Script" uid="uid://dx155gu8itveb" path="res://joystick.gd" id="1_jhikm"]
+[ext_resource type="Texture2D" uid="uid://dn3oyh1rmxyl0" path="res://Assets/circle.png" id="2_e821k"]
+[ext_resource type="Texture2D" uid="uid://c2wcm5m1a5i0u" path="res://Assets/circleKnob.png" id="3_dbkwe"]
+[ext_resource type="Script" uid="uid://davanlfp2b846" path="res://circle_knob.gd" id="4_ha458"]
+[ext_resource type="Texture2D" uid="uid://mmkhhm46l8ct" path="res://Assets/E-Key.png" id="5_dbkwe"]
+[ext_resource type="Texture2D" uid="uid://dbgfrk28vnfj1" path="res://Assets/Space-Key.png" id="6_ha458"]
+[ext_resource type="Texture2D" uid="uid://cgfv6dqh1hk8f" path="res://Assets/E-KeyPressed.png" id="6_k3e1m"]
+[ext_resource type="Texture2D" uid="uid://bfnic76pk8eb0" path="res://Assets/Space-KeyPressed.png" id="8_317ht"]
+
+[node name="JoystickUI" type="CanvasLayer"]
+
+[node name="Joystick" type="Node2D" parent="."]
+position = Vector2(227, 512)
+script = ExtResource("1_jhikm")
+
+[node name="Circle" type="Sprite2D" parent="Joystick"]
+position = Vector2(-2, -4)
+scale = Vector2(1.0607, 1.0607)
+texture = ExtResource("2_e821k")
+
+[node name="CircleKnob" type="Sprite2D" parent="Joystick"]
+position = Vector2(-1.99994, -4)
+scale = Vector2(1.0607, 1.0607)
+texture = ExtResource("3_dbkwe")
+script = ExtResource("4_ha458")
+
+[node name="Button" type="Button" parent="Joystick"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -63.0
+offset_top = -67.0
+offset_right = 197.0
+offset_bottom = 193.0
+scale = Vector2(1.0607, 1.0607)
+metadata/_edit_use_anchors_ = true
+
+[node name="Interact" type="TouchScreenButton" parent="Joystick"]
+texture_filter = 1
+position = Vector2(698, 110)
+scale = Vector2(2.96875, 2.96875)
+texture_normal = ExtResource("5_dbkwe")
+texture_pressed = ExtResource("6_k3e1m")
+
+[node name="Sprint" type="TouchScreenButton" parent="Joystick"]
+texture_filter = 1
+position = Vector2(869, 114)
+scale = Vector2(2.8125, 2.8125)
+texture_normal = ExtResource("6_ha458")
+texture_pressed = ExtResource("8_317ht")
+
+[connection signal="button_down" from="Joystick/Button" to="Joystick/CircleKnob" method="_on_button_button_down"]
+[connection signal="button_up" from="Joystick/Button" to="Joystick/CircleKnob" method="_on_button_button_up"]
+[connection signal="pressed" from="Joystick/Interact" to="Joystick" method="_on_interact_pressed"]
+[connection signal="pressed" from="Joystick/Sprint" to="Joystick" method="_on_sprint_pressed"]
+[connection signal="released" from="Joystick/Sprint" to="Joystick" method="_on_sprint_released"]

@@ -66,4 +66,8 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		body.reset_to_spawn()
 		MusicManager.stop_chase_music()
+		var joystick = get_tree().current_scene.get_node("Player").get_node("CharacterBody2D").get_node("JoystickUI").get_node("Joystick").get_node("CircleKnob")
+		joystick.reset()
+		body.HideBar()
 		js_cam.start_jumpscare()
+		

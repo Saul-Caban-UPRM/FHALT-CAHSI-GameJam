@@ -11,17 +11,19 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ax5ce")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -3.0
-offset_right = 1381.0
-offset_bottom = 723.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.00372, 1.0034)
 texture = ExtResource("2_dtclk")
 expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,24 +38,24 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.19246, 2.19246)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect/MarginContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="CanvasLayer/TextureRect/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 icon = ExtResource("3_onpd1")
 
-[node name="HowToplay" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
+[node name="HowToplay" type="Button" parent="CanvasLayer/TextureRect/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 icon = ExtResource("4_skixr")
 
-[node name="Quit" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="CanvasLayer/TextureRect/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 icon = ExtResource("5_xmlie")
 
-[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HowToplay" to="." method="_on_how_toplay_pressed"]
-[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/MarginContainer/VBoxContainer/HowToplay" to="." method="_on_how_toplay_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

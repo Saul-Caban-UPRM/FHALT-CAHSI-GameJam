@@ -15,6 +15,7 @@ var coins_collected = 0
 var required_coins = 1
 func ResetCoinsCollected():
 	coins_collected = 0
+	required_coins =1
 func AddRequiredCoins():
 	required_coins+=1
 func NextGameScene():

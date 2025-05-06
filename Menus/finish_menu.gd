@@ -21,7 +21,7 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 	
 func _on_play_pressed() -> void:
-	$AnimationPlayer.play("Fade_out")
+	$CanvasLayer/AnimationPlayer.play("Fade_out")
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://loor.tscn")
 	
